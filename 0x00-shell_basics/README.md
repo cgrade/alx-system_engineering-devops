@@ -3,7 +3,7 @@
 Shell Basics Folder
 Project done during **Full Stack Software Engineering studies** at **ALX**. It aims to learn about basics commands, navigation, files and directories in **Shell**.
 
-<a href="https://github.com/kirubel-web/alx-system_engineering-devops/tree/master/0x00-shell_basics">File</a>
+<a href="https://github.com/cgrade/alx-system_engineering-devops/tree/master/0x00-shell_basics">File</a>
 
 All of the following files are scripts, except `School.mgc`:
 
