@@ -2,4 +2,4 @@
 
 # A script that listens on port 98
 
-nc -l 98
+nc -l localhost 98
