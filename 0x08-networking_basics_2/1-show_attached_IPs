@@ -2,4 +2,4 @@
 
 # Displays all active IPv4 IPs on the machine
 
-ifconfig | grep -oP '(?<=addr:)[\d.]*'
+ifconfig | grep -Eo "inet (addr:)?([0-9]*\.){3}[0-9]*" | cut -b 6-
