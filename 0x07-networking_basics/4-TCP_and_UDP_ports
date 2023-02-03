@@ -4,4 +4,4 @@
 #	that only shows listening sockets
 #	That shows the PID and name of the program
 
-netstat -tlnp
+sudo netstat -lp
