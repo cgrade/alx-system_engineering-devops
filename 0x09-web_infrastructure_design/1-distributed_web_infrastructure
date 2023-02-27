@@ -1,0 +1,10 @@
+Below is the link to the Infrastructure design of a distrubuted web infrastructure
+it Has a Load Balancer
+2 Servers
+A Dns record of CNAME AND A Record
+The Load Balancer is configured with the Round Robin Algorithm
+The Setup Implemented here is the Active-active setups
+
+find below for the diagram of this infrastructure.
+
+https://drive.google.com/file/d/1kStW9G2EGzuS391UBY4a-WE7Hn2z_0r0/view?usp=share_link
