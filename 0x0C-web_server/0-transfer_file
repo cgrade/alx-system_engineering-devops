@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# A bash script that transfers a file from a local computer to a remote server using the scp command
+scp -i "$4" "$1" "$3"@"$2":~/
