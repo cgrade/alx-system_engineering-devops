@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+# A script that configures nginx and redirect a url
+
+sudo apt-get update
+sudo apt-get -y install nginx
+
+ufw allow 'Nginx HTTP'
+echo "Hello World!" > /var/www/html/index.html
+
+replacement_string="server_name_;\n#rewrite ^/redirect_me# https://twitter.com/MrGrade3 permanent;"
+sudo sed "s/server_name_;/$replacement_string/" /etc/nginx/sites-enabled/default
+
+sudo service start
