@@ -10,4 +10,4 @@ echo "Hello World!" > /var/www/html/index.html
 replacement_string="server_name_;\n\trewrite ^\/redirect_me https:\/\/twitter.com\/MrGrade3 permanent;"
 sudo sed -i "s/server_name_;/$replacement_string/" /etc/nginx/sites-enabled/default
 
-sudo service restart
+sudo service nginx restart
