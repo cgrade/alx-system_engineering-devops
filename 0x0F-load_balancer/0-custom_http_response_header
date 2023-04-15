@@ -4,17 +4,8 @@
 sudo apt-get update
 sudo apt-get install -y nginx
 
-ufw allow 'Nginx HTTP'
-echo "Hello World!" | sudo tee /var/www/html/index.html
-
 #setting up a redirection for '/redirect_me' and set custom headers
-replacement_string="server_name_;\n\trewrite ^\/redirect_me https:\/\/twitter.com\/MrGrade3 permanent\n\tadd_header X-Served-By $hostname;"
+replacement_string="server_name_;\n\tadd_header X-Served-By $hostname;"
 sudo sed -i "s/server_name_;/$replacement_string/" /etc/nginx/sites-enabled/default
 
-#configuring '404 not found page'
-echo "Ceci n'est pas une page" | sudo tee /var/www/html/404.html
-replacement_string="listen 80 default_server;\n\terror_page 404 \/404.html;\n\tlocation = \/404.html {\n\troot \/var\/www\/html;\n\tinternal;\n\t}"
-sudo sed -i "s/listen 80 default_server;/$replacement_string/" /etc/nginx/sites-enabled/default
-
-#restarting nginx server
 sudo service nginx restart
