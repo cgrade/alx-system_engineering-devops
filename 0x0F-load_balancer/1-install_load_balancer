@@ -9,14 +9,14 @@ apt-get -y install haproxy
 # edit config file
 server_config=\
 "
-frontend  grade-frontend
+frontend grade-frontend
         bind *:80
         mode http
         default_backend grade-backend
-backend ehoneah-backend
+backend grade-backend
         balance roundrobin
-        server 63210-web-01 100.25.19.204:80 check
-        server 63210-web-02 54.157.159.85:80 check
+        server 129952-web-01 52.91.131.225:80 check
+        server 129952-web-02 3.85.148.88:80 check
 "
 echo "$server_config" | sudo tee -a /etc/haproxy/haproxy.cfg
 
