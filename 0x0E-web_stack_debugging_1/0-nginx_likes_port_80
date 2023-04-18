@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# A script that configures nginx to listen
+# to port 80, assuming nginx is already installed
+
+ln -sf /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
+
+# Restart nginx to apply the above changes
+
+sudo service nginx restart
