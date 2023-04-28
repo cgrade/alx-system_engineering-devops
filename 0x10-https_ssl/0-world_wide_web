@@ -1,27 +1,18 @@
 #!/usr/bin/env bash
-# A script that accepts two arguments
-# Args1: domain
-# Args2: Sub-domain
-# RETURNS: the A records and IP address they points to
 
-# Function Definition
 function audit_subdomain {
-	domain=$1
-	subdomain=$2
-	
-	# checking for Arg 2
-	if [ -z "$subdomain" ]; then
-		subdomains=("www" "lb-01" "web-01" "web-02")
-	else
-		subdomains=("$subdomain")
-	fi
-	
-	# loop through
-	for subdomain in "${subdomains[@]}"; do
-		record_type=$(dig +short -t CNAME "$subdomain"."$domain" | awk '{print $1}')
-		destination=$(dig +short "$subdomain"."$domain" | awk '{print $1}')
-		echo "The subdomain $subdomain is a $record_type record and points to $destination"
-	done
+    domain=$1
+    subdomain=$2
+    if [ -z "$subdomain" ]; then
+        subdomains=("www" "lb-01" "web-01" "web-02")
+    else
+        subdomains=("$subdomain")
+    fi
+    for subdomain in "${subdomains[@]}"; do
+        record_type=$(dig +short -t CNAME "$subdomain"."$domain" | awk '{print $1}')
+        destination=$(dig +short "$subdomain"."$domain" | awk '{print $1}')
+        echo "The subdomain $subdomain is a $record_type record and points to $destination"
+    done
 }
 
 audit_subdomain "$1" "$2"
