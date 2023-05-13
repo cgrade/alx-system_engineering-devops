@@ -25,10 +25,10 @@ emp_name = usr['name']
 complTask = 0
 notComplTask = 0
 title = []
-true = True
+
 # looping through the dictionary
 for i in todo:
-    if i['completed'] == true:
+    if i['completed']:
         complTask += 1
     else:
         notComplTask += 1
@@ -40,5 +40,5 @@ print('Employee {} is done with tasks ({}/{}): '.format(
     emp_name, complTask, (notComplTask + complTask)
 ))
 for i in todo:
-    if i['completed'] == true:
+    if i['completed']:
         print('     {}'.format(i['title']))
