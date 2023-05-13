@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" A python Scripts that uses a REST API for 
+""" A python Scripts that uses a REST API for
 a given employee ID and returns information about
 his/her ToDO list progress
 """
@@ -20,25 +20,25 @@ r_usr = requests.get(usr_url)
 usr = json.loads(r_usr.text)
 todo = json.loads(r_todo.text)
 
-#declaring variables
+# declaring variables
 emp_name = usr['name']
 complTask = 0
 notComplTask = 0
 title = []
-
+true = True
 # looping through the dictionary
 for i in todo:
-    if i['completed'] == True:
+    if i['completed'] == true:
         complTask += 1
     else:
         notComplTask += 1
 
     title.append(i['title'])
 
-#output the code
+# output the code
 print('Employee {} is done with tasks ({}/{}): '.format(
     emp_name, complTask, (notComplTask + complTask)
 ))
 for i in todo:
-    if i['completed'] == True:
+    if i['completed'] == true:
         print('     {}'.format(i['title']))
